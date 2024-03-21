@@ -7,6 +7,6 @@ Feature: Tasks Module Functionality
     And the user logged in with username as "Employee15" and password as "Employee123"
 
 
-  @wip
+  @wipc
   Scenario: User can create a new task
     And the user navigates to "Tasks" module
