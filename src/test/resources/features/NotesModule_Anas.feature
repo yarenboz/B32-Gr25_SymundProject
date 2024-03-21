@@ -37,4 +37,4 @@ Feature: Users should be able to login
     Then user click 3dots in note module
     Then user able to see Delete note
     When user click Delete note
-    Then user able to see Delete "New note" in top right page
+    Then user able to see Delete "Deleted" in top right page

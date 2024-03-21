@@ -17,8 +17,6 @@ public class TasksPage extends BasePage{
     public WebElement NewNote;
 
 
-    @FindBy (className = "CodeMirror-cursors")
-    public WebElement Cursor;
 
     //@FindBy (xpath = "//div[@class='markdown-editor']/textarea")
     @FindBy (xpath = "//div[contains(@class,'CodeMirror cm-s-easymde CodeMirror-wrap')]/div/textarea")
@@ -29,7 +27,7 @@ public class TasksPage extends BasePage{
     public WebElement NoteTitle;
 
 
-    @FindBy(xpath = "//ul[@class='app-navigation__list']//li[3]//button")
+    @FindBy(xpath = "//li[@class='app-navigation-caption']//following-sibling::*[1]//button")
     public WebElement Note3Dot;
 
     @FindBy (xpath = "//ul[contains(@id,'menu')]//li[2]/button")

@@ -43,13 +43,16 @@ public class TasksStepDefs {
     @Then("user able to see new note title matches with the first word in the note created {string}")
     public void userAbleToSeeNewNoteTitleMatchesWithTheFirstWordInTheNoteCreated(String arg0) {
 
-        sleep(1);
+        sleep(3);
         Assert.assertEquals(arg0,tasksPage.NoteTitle.getAttribute("title"));
 
 
     }
 
     private final String url= getDriver().getCurrentUrl();
+
+
+
     @Then("user click 3dots in note module")
     public void user_click_3dots_in_note_module() {
         Actions actions=new Actions(getDriver());
@@ -57,23 +60,32 @@ public class TasksStepDefs {
     //tasksPage.Note3Dot.click();
     }
 
+
     @Then("user able to see add to favorites")
     public void user_able_to_see_add_to_favorites() {
        tasksPage.AddToFavorites.isDisplayed();
     }
+
+
     @When("user click add to favorites")
     public void user_click_add_to_favorites() {
         tasksPage.AddToFavorites.click();
     }
 
+
+
     @Then("user navigates to {string} module")
     public void userNavigatesToModule(String arg0) {
         tasksPage.navigateToModule(arg0);
     }
+
+
     @Then("user click to favorites")
     public void user_click_to_favorites() {
        tasksPage.Favorites.click();
     }
+
+
     @Then("user can see the new note added to favorites")
     public void user_can_see_the_new_note_added_to_favorites() {
         String urlId="";
@@ -93,27 +105,37 @@ public class TasksStepDefs {
         Actions actions = new Actions(getDriver());
         actions.moveToElement(tasksPage._3dotsBtn).click().perform();
     }
+
+
     @Then("user able to see Details")
     public void user_able_to_see_details() {
        tasksPage.DetailBtnIsDisplayed.isDisplayed();
     }
+
+
     @When("user click Details")
     public void user_click_details() {
         tasksPage.DetailBtn.click();
     }
+
+
     @Then("user can see the number of letters and words that the notes includes under the note title")
     public void user_can_see_the_number_of_letters_and_words_that_the_notes_includes_under_the_note_title() {
      tasksPage.NumberOfLetter.isDisplayed();
     }
 
+
     @Then("user able to see Delete note")
     public void user_able_to_see_delete_note() {
 tasksPage.DeleteNote.isDisplayed();
     }
+
+
     @When("user click Delete note")
     public void user_click_delete_note() {
         tasksPage.DeleteBtn.click();
     }
+
 
     @Then("user able to see Delete {string} in top right page")
     public void userAbleToSeeDeleteInTopRightPage(String arg0) {
