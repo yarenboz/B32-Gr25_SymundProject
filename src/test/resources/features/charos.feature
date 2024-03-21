@@ -10,11 +10,11 @@ Feature: Deck Module Functionality
   Scenario: Create a new board
     When user creates a new board
     Then the board is created successfully
-
-#  Scenario: Create a new list under a board
-#   Given user has a board named "My Board"
-#   When user creates a new list "To Do" under the board
-#   Then "To Do" list is created successfully
+@giv
+  Scenario: Create a new list under a board
+   Given user has a board named "My Board"
+   When user creates a new list "To Do" under the board
+   Then "To Do" list is created successfully
 
 #  Scenario: Add a new card/task to a list
 #    Given user has a board named "My Board" with a list "To Do"
