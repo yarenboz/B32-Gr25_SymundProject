@@ -63,7 +63,7 @@ public class TasksStepDefs {
 
     @Then("user able to see add to favorites")
     public void user_able_to_see_add_to_favorites() {
-       tasksPage.AddToFavorites.isDisplayed();
+      Assert.assertTrue( tasksPage.AddToFavorites.isDisplayed());
     }
 
 
@@ -109,7 +109,7 @@ public class TasksStepDefs {
 
     @Then("user able to see Details")
     public void user_able_to_see_details() {
-       tasksPage.DetailBtnIsDisplayed.isDisplayed();
+       Assert.assertTrue(tasksPage.DetailBtnIsDisplayed.isDisplayed());
     }
 
 
@@ -121,13 +121,13 @@ public class TasksStepDefs {
 
     @Then("user can see the number of letters and words that the notes includes under the note title")
     public void user_can_see_the_number_of_letters_and_words_that_the_notes_includes_under_the_note_title() {
-     tasksPage.NumberOfLetter.isDisplayed();
+     Assert.assertTrue(tasksPage.NumberOfLetter.isDisplayed());
     }
 
 
     @Then("user able to see Delete note")
     public void user_able_to_see_delete_note() {
-tasksPage.DeleteNote.isDisplayed();
+    Assert.assertTrue(tasksPage.DeleteNote.isDisplayed());
     }
 
 
