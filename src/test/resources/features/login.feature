@@ -6,7 +6,7 @@ Feature: Users should be able to login
 
 @wip
   Scenario: Verify login with valid credentials
-     Given the user logged in with username as "Employee1" and password as "Employee123"
+     Given the user logged in with username as "Employee35" and password as "Employee123"
 
 
 
