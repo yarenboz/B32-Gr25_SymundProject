@@ -12,16 +12,16 @@ Feature: Deck Module Functionality
     Then the board is created successfully
 @giv
   Scenario: Create a new list under a board
-   Given user has a board named "My Board"
+   Given user has a board named "Personal"
    When user creates a new list "To Do" under the board
    Then "To Do" list is created successfully
-
-#  Scenario: Add a new card/task to a list
-#    Given user has a board named "My Board" with a list "To Do"
-#    When user adds a new card/task "Task 1" to the "To Do" list
-#    Then "Task 1" is added successfully to the list
-#
-#  Scenario: Assign a card/task to self
-#    Given user has a board named "My Board" with a list "To Do" containing "Task 1"
-#    When user assigns "Task 1" to self
-#    Then "Task 1" is assigned to the user
+@yu
+  Scenario: Add a new card/task to a list
+#    Given user has a board named "Personal" with a list "To Do"
+    Given user adds a new card task "Task1" to the "To Do" list
+    Then "Task1" is added successfully to the list
+@abh
+  Scenario: Assign a card/task to self
+#    Given user has a board named "Personal" with a list "To Do" containing "Task 1"
+  Given user assigns "Task 1" to self
+    Then "Task 1" is assigned to the user

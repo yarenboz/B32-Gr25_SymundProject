@@ -1,6 +1,8 @@
 package com.symund.pages;
 
+import com.symund.utilities.BrowserUtils;
 import com.symund.utilities.Driver;
+import io.cucumber.java.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,45 +39,60 @@ public class DeckPage extends BasePage {
 
     @FindBy(xpath = "//span[@title='Personal']")
     public WebElement personalBtn;
-    @FindBy(xpath = "//button[@class='action-item action-item--single icon-add undefined undefined has-tooltip']")
+    @FindBy(xpath = "//div[@id='stack-add']/button")
     public WebElement addListButton;
 
     @FindBy(id = "new-stack-input-main")
     public WebElement typeListNameInput;
 
-    @FindBy(xpath = "//input[@type='submit'][@class='icon-confirm']")
+    @FindBy(xpath = "//input[@class='icon-confirm has-tooltip']")
     public WebElement addListNameField;
 
-    @FindBy(xpath = "//input[@type='text']")
+    @FindBy(xpath = "//h3[@class='stack__title has-tooltip']")
     public WebElement Todo;
-   public void typeListName(String listName) {
 
-       personalBtn.click();
-       addListButton.click();
-       typeListNameInput.sendKeys(listName);
-   }
+    public void typeListName(String listName) {
+
+        personalBtn.click();
+        addListButton.click();
+        typeListNameInput.sendKeys(listName);
+        BrowserUtils.waitFor(2);
+        addListNameField.click(); // Assuming this is the button to confirm adding the list
+
+    }
+
+    public void addTodoItem(String todoItem) {
+        Todo.sendKeys(todoItem);
+         addCardBtn.click();
+         passNewCardName.click();
+         treeDots.click();
+         assginToMeOption.click();
+    }
+
+@FindBy(xpath = "//div[@class='smooth-dnd-draggable-wrapper']/div/div/button")
+  public WebElement addCardBtn;
+ @FindBy(xpath = "//input[@placeholder='Card name']")
+   public WebElement passNewCardName;
+ @FindBy(xpath= "//button[@class='icon-collapse']")
+ public WebElement Allboards;
+
+    @FindBy(xpath = "//input[@placeholder='Card name']//following-sibling::*")
+    public WebElement enterCardName;
+
+    @FindBy(xpath = "//input[@placeholder='Card name']//following-sibling::*")
+    public WebElement checkCardName;
+
+
+    @FindBy(xpath = "//div[@class='badges']//button")
+ public WebElement treeDots;
+
+@FindBy(xpath = "//div[@class='popover vue-popover-theme open']//li[1]//button")
+    public WebElement assginToMeOption;
+
+    @FindBy(xpath = "//div[@class='avatars']//img")
+    public WebElement assignedToTheUser;
+
 }
 
 
 
-    // driver.findElement(By.xpath("//div[@class='board-tile-details-name'][contains(text(),'My Board')]")).click();
-//
-//            // Wait for the board to open
-//            Thread.sleep(2000); // Introduce a small delay to ensure board loads completely
-//
-//            // Create a new list "To Do"
-//            WebElement addListButton = driver.findElement(By.xpath("//span[contains(text(),'Add a list')]"));
-//            addListButton.click();
-//
-//            WebElement listNameField = driver.findElement(By.xpath("//input[@class='list-name-input']"));
-//            listNameField.sendKeys("To Do");
-//
-//            // Click the "Add List" button
-//            WebElement addList = driver.findElement(By.xpath("//input[@value='Add List']"));
-//            addList.click();
-//
-//            System.out.println("List created successfully!");
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        } finally {
